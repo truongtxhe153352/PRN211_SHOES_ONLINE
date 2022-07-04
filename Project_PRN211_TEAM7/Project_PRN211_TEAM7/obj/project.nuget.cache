@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "d03n44+wgvNnik+Ov9GOoYUcbJHP4X/gyT0cgA8O89h+rdgsyyDOashmvKeOso2t0KCuDkTRgSQWI93OjgRDCA==",
+  "dgSpecHash": "NrQ/Bu+jCVucEvhSeTSQPrHUUfArnvnIwWonTvZKWytBME+VpTYp6MJ1mHBVs7qHeJ62w55R0pgDvoGpoT0Oig==",
   "success": true,
-  "projectFilePath": "D:\\Project_PRN211_TEAM7\\Project_PRN211_TEAM7\\Project_PRN211_TEAM7.csproj",
+  "projectFilePath": "D:\\PROJECT_PRN_GROUP7_FINAL\\PRN211_SHOES_ONLINE\\Project_PRN211_TEAM7\\Project_PRN211_TEAM7\\Project_PRN211_TEAM7.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\truon\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\truon\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
