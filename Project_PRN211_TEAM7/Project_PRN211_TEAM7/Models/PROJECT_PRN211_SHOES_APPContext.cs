@@ -1,6 +1,8 @@
 ﻿using System;
+using System.IO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Configuration;
 
 #nullable disable
 
@@ -27,8 +29,12 @@ namespace Project_PRN211_TEAM7.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("server =LAPTOP-402O4APC; database = PROJECT_PRN211_SHOES_APP;uid=sa;pwd=123;");
+                var builder = new ConfigurationBuilder()
+                      .SetBasePath(Directory.GetCurrentDirectory())
+                      .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+                IConfigurationRoot configuration = builder.Build();
+                optionsBuilder.UseSqlServer(configuration.GetConnectionString("PROJECT_PRN211_SHOES_APP"));
+
             }
         }
 
