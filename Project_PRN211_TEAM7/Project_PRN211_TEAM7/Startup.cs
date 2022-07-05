@@ -26,19 +26,17 @@ namespace Project_PRN211_TEAM7
             {
                 app.UseDeveloperExceptionPage();
             }
-
             app.UseStaticFiles();
 
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}"
-                    );
+               endpoints.MapControllerRoute(
+                    name: "default", // duoc doi ten
+                    pattern: "{controller=Product}/{action=Index}/{id?}"
+                );
             });
-
         }
     }
 }
