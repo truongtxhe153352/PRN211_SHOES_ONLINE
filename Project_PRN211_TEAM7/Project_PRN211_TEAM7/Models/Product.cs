@@ -13,7 +13,6 @@ namespace Project_PRN211_TEAM7.Models
         }
 
         public int ProductId { get; set; }
-        public int CategoryId { get; set; }
         public string ProductName { get; set; }
         public int? Quantity { get; set; }
         public double? Price { get; set; }
@@ -24,7 +23,6 @@ namespace Project_PRN211_TEAM7.Models
         public int? BrandId { get; set; }
 
         public virtual Brand Brand { get; set; }
-        public virtual Category Category { get; set; }
         public virtual ICollection<OderDetail> OderDetails { get; set; }
     }
 }
