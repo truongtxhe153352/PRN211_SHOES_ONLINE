@@ -1,0 +1,49 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using Project_PRN211_TEAM7.Models;
+using System.Linq;
+
+namespace Project_PRN211_TEAM7.Controllers
+{
+    public class UserController : Controller
+    {
+        PROJECT_PRN211_SHOES_APPContext context = new PROJECT_PRN211_SHOES_APPContext();
+        public IActionResult Register()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Register(User acc, string re_password)
+        {
+            if (acc.UserName == null || acc.Password == null || acc.Address == null || acc.Phone == null || re_password == null)
+            {
+                return View();
+            }
+            if (!acc.Password.Equals(re_password))
+            {
+                ViewBag.password = "Confirmation password does not match";
+                return View();
+            }
+            if (!ModelState.IsValid)
+            {
+                var user = context.Users.FirstOrDefault(u => u.UserName.Equals(acc.UserName));
+                if (user != null)
+                {
+                    ViewBag.user = "This UserName was exist!";
+                    return View();
+                }
+                else
+                {
+                    acc.Role = "customer";
+                    context.Users.Add(acc);
+                    context.SaveChanges();
+                    return Redirect("Home/Index");
+                }
+
+            }
+            else
+            {
+                return RedirectToAction("Register");
+            }
+        }
+    }
+}
