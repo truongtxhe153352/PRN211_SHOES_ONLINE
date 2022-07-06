@@ -32,9 +32,9 @@ namespace Project_PRN211_TEAM7
 
             app.UseEndpoints(endpoints =>
             {
-               endpoints.MapControllerRoute(
+                endpoints.MapControllerRoute(
                     name: "default", // duoc doi ten
-                    pattern: "{controller=Product}/{action=Index}/{id?}"
+                    pattern: "{controller=Product}/{action=ProductDetail}/{id?}"
                 );
             });
         }

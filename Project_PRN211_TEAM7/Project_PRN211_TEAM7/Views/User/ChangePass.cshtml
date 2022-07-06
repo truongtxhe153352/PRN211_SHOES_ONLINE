@@ -1,0 +1,36 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@using Project_PRN211_TEAM7.Models
+@model User
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@if (@ViewBag.Mess != null)
+{
+    <h3>@ViewBag.Mess</h3>
+}
+<form asp-controller="User" asp-action="ChangePass" method="post">
+    <table>
+        <tr>
+            <td>UserName</td>
+            <td><input type="text" name="username"/></td>
+        </tr>
+       <tr>
+            <td>OldPass</td>
+            <td><input type="password" name="oldpass"/></td>
+        </tr>
+        <tr>
+            <td>NewPass</td>
+            <td><input type="password" name="newpass"/></td>
+        </tr>
+        <tr>
+            <td>Re-newpass</td>
+            <td><input type="password" name="repass"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Submit"/></td>
+        </tr>
+    </table>
+</form>

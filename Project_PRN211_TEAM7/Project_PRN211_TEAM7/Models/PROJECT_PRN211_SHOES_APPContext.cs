@@ -23,6 +23,7 @@ namespace Project_PRN211_TEAM7.Models
         public virtual DbSet<Oder> Oders { get; set; }
         public virtual DbSet<OderDetail> OderDetails { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Size> Sizes { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -30,11 +31,10 @@ namespace Project_PRN211_TEAM7.Models
             if (!optionsBuilder.IsConfigured)
             {
                 var builder = new ConfigurationBuilder()
-                      .SetBasePath(Directory.GetCurrentDirectory())
-                      .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
                 IConfigurationRoot configuration = builder.Build();
                 optionsBuilder.UseSqlServer(configuration.GetConnectionString("PROJECT_PRN211_SHOES_APP"));
-
             }
         }
 
@@ -98,6 +98,22 @@ namespace Project_PRN211_TEAM7.Models
                     .WithMany(p => p.Products)
                     .HasForeignKey(d => d.BrandId)
                     .HasConstraintName("FK_Product_Brand");
+            });
+
+            modelBuilder.Entity<Size>(entity =>
+            {
+                entity.HasKey(e => new { e.ProductId, e.Size1 })
+                    .HasName("PK__Size__DE3E961D47A048ED");
+
+                entity.ToTable("Size");
+
+                entity.Property(e => e.Size1).HasColumnName("Size");
+
+                entity.HasOne(d => d.Product)
+                    .WithMany(p => p.Sizes)
+                    .HasForeignKey(d => d.ProductId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__Size__ProductId__38996AB5");
             });
 
             modelBuilder.Entity<User>(entity =>
