@@ -7,6 +7,8 @@ using System.Security.Cryptography;
 using System.Text;
 using Project_PRN211_TEAM7.Logic;
 using Microsoft.AspNetCore.Http;
+using System.Text.RegularExpressions;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Project_PRN211_TEAM7.Controllers
 {
@@ -18,7 +20,8 @@ namespace Project_PRN211_TEAM7.Controllers
         public IActionResult Index()
         {
             ViewBag.Message = HttpContext.Session.GetString("username");
-            return View() ;
+            ViewBag.Brand = db.Brands.ToList();
+            return View(db.Products.ToList()) ;
         }
 
         public IActionResult Shop(int Id, int Page)
@@ -99,6 +102,62 @@ namespace Project_PRN211_TEAM7.Controllers
         {
             HttpContext.Session.Remove("username");
             return RedirectToAction("Index");
+        }
+        public IActionResult Register()
+        {
+            return View();
+        }
+        [HttpPost]
+        [AllowAnonymous]
+        public IActionResult Register(User acc, string re_password)
+        {
+            if (acc.Password == null || re_password == null || acc.UserName == null || acc.Address == null || acc.Phone == null)
+            {
+                return View();
+            }
+            if (!acc.Password.Equals(re_password))
+            {
+                ViewBag.password = "Confirmation password does not match";
+                return View();
+            }
+            Regex re = new Regex("[0-9]");
+            if (acc.Phone.Length > 8)
+            {
+                for (int i = 0; i < acc.Phone.Length; i++)
+                {
+                    if (!re.IsMatch(acc.Phone[i] + ""))
+                    {
+                        ViewBag.phone = "Please enter valid phone number";
+                        return View();
+                    }
+                }
+            }
+            else
+            {
+                ViewBag.phone = "Please enter valid phone number > 8";
+                return View();
+            }
+            if (ModelState.IsValid)
+            {
+                var user = db.Users.FirstOrDefault(u => u.UserName.Equals(acc.UserName));
+                if (user != null)
+                {
+                    ViewBag.user = "This UserName was exist!";
+                    return View();
+                }
+                else
+                {
+                    acc.Role = "customer";
+                    db.Users.Add(acc);
+                    db.SaveChanges();
+                    return Redirect("Home/Index");
+                }
+
+            }
+            else
+            {
+                return RedirectToAction("Register");
+            }
         }
 
     }
