@@ -84,12 +84,12 @@
               <ul class="dropdown">
                                 @foreach(var c in @ViewBag.Brand)
                                 {
-                                     <li><a asp-controller="#" asp-action="#" asp-route-id="@c.BrandId" >@c.BrandName</a></li>
+                                     <li><a href="/Home/Shop/@c.BrandId" >@c.BrandName</a></li>
                                 } 
                                
               </ul>
             </li>
-            <li><a href="shop.html">Shop</a></li>
+              <li><a asp-controller="Home" asp-action="Shop">Shop All</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
