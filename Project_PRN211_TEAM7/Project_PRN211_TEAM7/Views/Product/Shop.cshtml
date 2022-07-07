@@ -191,7 +191,7 @@
                       @for(int i = 1; i < (int)ViewData["TotalPage"]; i++)
                     {
                     <li>
-                        <a class='@((int)ViewData["CurrentPage"]==i?"active":"nonactive")' href='/Home/Shop/@ViewData["CurrentBra"]/@i' >
+                        <a class='@((int)ViewData["CurrentPage"]==i?"active":"nonactive")' href='/Product/Shop/@ViewData["CurrentBra"]/@i' >
                         @i
                         </a>
                     </li>
@@ -222,7 +222,7 @@
               <ul class="list-unstyled mb-0">
                                 @foreach(Brand b in ViewBag.Brand)
                                 {
-                <li class="mb-1"><a href="/Home/Shop/@b.BrandId" class="d-flex"><span>@b.BrandName</span></a></li>
+                <li class="mb-1"><a href="/Product/Shop/@b.BrandId" class="d-flex"><span>@b.BrandName</span></a></li>
                                     
                                 }
                             </ul>

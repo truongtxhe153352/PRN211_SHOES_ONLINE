@@ -52,11 +52,11 @@
               <div class="site-top-icons">
                 <ul>
                     @if(@ViewBag.Message != null){
-                                        <li><a asp-controller="Home" asp-action="Login"><span class="icon icon-person">Hello: @ViewBag.Message</span></a></li>
+                                        <li><a asp-controller="User" asp-action="Login"><span class="icon icon-person">Hello: @ViewBag.Message</span></a></li>
                                     }
                                     else
                                     {
-                                    <li><a asp-controller="Home" asp-action="Login"><span class="icon icon-person"></span></a></li>
+                                    <li><a asp-controller="User" asp-action="Login"><span class="icon icon-person"></span></a></li>
                                         
                                     }
                   <li>
@@ -89,7 +89,7 @@
                                
               </ul>
             </li>
-              <li><a asp-controller="Home" asp-action="Shop">Shop All</a></li>
+              <li><a asp-controller="Product" asp-action="Shop">Shop All</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>

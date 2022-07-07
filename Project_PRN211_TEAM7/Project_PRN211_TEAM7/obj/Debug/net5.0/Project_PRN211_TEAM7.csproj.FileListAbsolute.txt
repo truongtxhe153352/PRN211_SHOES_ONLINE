@@ -128,8 +128,6 @@ D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN
 D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Project_PRN211_TEAM7.pdb
 D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Project_PRN211_TEAM7.genruntimeconfig.cache
 D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\ref\Project_PRN211_TEAM7.dll
-D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\Home\Shop.cshtml.g.cs
-D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\Home\Login.cshtml.g.cs
 C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\bin\Debug\net5.0\Project_PRN211_TEAM7.exe
 C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\bin\Debug\net5.0\appsettings.json
@@ -198,3 +196,6 @@ C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PR
 C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Project_PRN211_TEAM7.pdb
 C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Project_PRN211_TEAM7.genruntimeconfig.cache
 C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\ref\Project_PRN211_TEAM7.dll
+D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\Product\Shop.cshtml.g.cs
+D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\User\Login.cshtml.g.cs
+D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\User\Register.cshtml.g.cs
