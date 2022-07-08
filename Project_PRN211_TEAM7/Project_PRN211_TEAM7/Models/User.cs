@@ -14,25 +14,16 @@ namespace Project_PRN211_TEAM7.Models
         }
 
         public int UserId { get; set; }
-        [Required (AllowEmptyStrings =false, ErrorMessage = "Input your UserName")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Input your UserName")]
         public string UserName { get; set; }
-        [Required (AllowEmptyStrings =false, ErrorMessage = "Input your Password")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Input your Password")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-        [Required (AllowEmptyStrings =false, ErrorMessage = "Input your Address")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Input your Address")]
         public string Address { get; set; }
-        [Required (AllowEmptyStrings =false, ErrorMessage = "Input your Phone")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Input your Phone")]
         public string Phone { get; set; }
         public string Role { get; set; }
-
-        public User(string userName, string password, string address, string phone, string role)
-        {
-            UserName = userName;
-            Password = password;
-            Address = address;
-            Phone = phone;
-            Role = role;
-        }
 
         public virtual ICollection<Oder> Oders { get; set; }
     }

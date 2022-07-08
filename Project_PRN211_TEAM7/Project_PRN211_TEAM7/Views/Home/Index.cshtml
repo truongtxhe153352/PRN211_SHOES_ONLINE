@@ -12,25 +12,31 @@
     <title>HomePage</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
     <link rel="stylesheet" href="~/fonts/icomoon/style.css">
+
     <link rel="stylesheet" href="~/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/css/magnific-popup.css">
     <link rel="stylesheet" href="~/css/jquery-ui.css">
     <link rel="stylesheet" href="~/css/owl.carousel.min.css">
     <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="~/css/aos.css">
-    <link rel="stylesheet" href="~/css/style.css">
+
+
+   <link rel="stylesheet" href="~/css/aos.css">
+
+   <link rel="stylesheet" href="~/css/style.css">
+    
   </head>
   <body>
+  
   <div class="site-wrap">
     <header class="site-navbar" role="banner">
       <div class="site-navbar-top">
         <div class="container">
           <div class="row align-items-center">
-
             <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
-              <form asp-controller="#" asp-action="#" method="post" class="site-block-top-search">
+              <form action="" class="site-block-top-search">
                 <span class="icon icon-search2"></span>
                 <input type="text" class="form-control border-0" placeholder="Search">
               </form>
@@ -38,15 +44,21 @@
 
             <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
               <div class="site-logo">
-                <a asp-controller="Home" asp-action="Index" class="js-logo-clone">ShoesShop7</a>
+                <a href="index.html" class="js-logo-clone">Shoppers</a>
               </div>
             </div>
 
             <div class="col-6 col-md-4 order-3 order-md-3 text-right">
               <div class="site-top-icons">
                 <ul>
-                  <li><a href="#"><span class="icon icon-person"></span></a></li>
-                  <li><a href="#"><span class="icon icon-heart-o"></span></a></li>
+                    @if(@ViewBag.Message != null){
+                                        <li><a asp-controller="User" asp-action="Login"><span class="icon icon-person">Hello: @ViewBag.Message</span></a></li>
+                                    }
+                                    else
+                                    {
+                                    <li><a asp-controller="User" asp-action="Login"><span class="icon icon-person"></span></a></li>
+                                        
+                                    }
                   <li>
                     <a href="cart.html" class="site-cart">
                       <span class="icon icon-shopping_cart"></span>
@@ -57,13 +69,14 @@
                 </ul>
               </div> 
             </div>
+
           </div>
         </div>
       </div> 
       <nav class="site-navigation text-right text-md-center" role="navigation">
         <div class="container">
           <ul class="site-menu js-clone-nav d-none d-md-block">
-            <li class="active">
+           <li class="active">
               <a asp-action="Index" asp-controller="Home">Home</a>
             </li>
             <li class="has-children">
@@ -71,13 +84,23 @@
               <ul class="dropdown">
                                 @foreach(var c in @ViewBag.Brand)
                                 {
-                                     <li><a asp-controller="#" asp-action="#" asp-route-id="@c.BrandId" >@c.BrandName</a></li>
+                                     <li><a href="/Product/Shop/@c.BrandId" >@c.BrandName</a></li>
                                 } 
                                
               </ul>
             </li>
-            <li><a href="shop.html">Shop</a></li>
+              <li><a asp-controller="Product" asp-action="Shop">Shop</a></li>
             <li><a href="contact.html">Contact</a></li>
+             @if (@ViewBag.Message != null)
+             {
+             <li class="has-children">
+               <a>My Account</a>
+              <ul class="dropdown">
+                <li><a asp-controller="User" asp-action="ChangePass">Change Password</a></li>
+                <li><a asp-controller="User" asp-action="Logout">Logout</a></li>
+              </ul>
+            </li>
+            }
           </ul>
         </div>
       </nav>
@@ -112,7 +135,7 @@
                         <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="">
                         <a class="block-2-item" href="#">
                         <figure class="image">
-                        <img src="images/@Model.ElementAt(i).Image" alt="" class="img-fluid">
+                       <a asp-controller="Product" asp-action="ProductDetail" asp-route-id= "@Model.ElementAt(i).ProductId"> <img src="images/@Model.ElementAt(i).Image" alt="" class="img-fluid"></a>
                         </figure>
                         <div class="text">
                         <span class="text-uppercase">Collections</span>
@@ -139,7 +162,7 @@
               <div class="item">
                 <div class="block-4 text-center">
                   <figure class="block-4-image">
-                    <img src="images/@Model.ElementAt(i).Image" alt="Image placeholder" class="img-fluid">
+                  <a asp-controller="Product" asp-action="ProductDetail" asp-route-id= "@Model.ElementAt(i).ProductId">  <img src="images/@Model.ElementAt(i).Image" alt="Image placeholder" class="img-fluid"></a>
                   </figure>
                   <div class="block-4-text p-4">
                     <h3><a href="#">@Model.ElementAt(i).ProductName</a></h3>
