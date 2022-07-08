@@ -9,7 +9,7 @@ namespace Project_PRN211_TEAM7.Controllers
     public class ProductController : Controller
     {
 
-
+        PROJECT_PRN211_SHOES_APPContext db = new PROJECT_PRN211_SHOES_APPContext();
         public IActionResult Shop(int Id, int Page)
         {
             // lay danh sach category
@@ -76,9 +76,18 @@ namespace Project_PRN211_TEAM7.Controllers
             }
         }
 
-
-
-
-
+        public IActionResult ProductDetail(int id)
+        {
+           
+            Product product = db.Products.Find(id);
+            var sizes = (from s in db.Sizes
+                         where s.ProductId == id
+                         select s).ToList();
+            var quantity = db.Sizes.Sum(i => i.Quantity);
+            ViewBag.Sizes = sizes;
+            ViewBag.Quantity = quantity;
+            ViewBag.Product = product;
+            return View();
+        }
     }
 }

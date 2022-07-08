@@ -114,11 +114,48 @@ namespace Project_PRN211_TEAM7.Controllers
             return View("Login");
         }
 
-        [HttpPost]
+    
         public ActionResult Logout()
         {
             HttpContext.Session.Remove("username");
             return RedirectToAction("Index", "Home");
+        }
+
+        public IActionResult ChangePass()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult ChangePass(string oldpass, string newpass, string repass)
+        {
+            string username = HttpContext.Session.GetString("username");
+            User user = (from u in db.Users
+                         where u.UserName.Equals(username)
+                         select u).ToList().First();
+
+            if (user.Password.Equals(oldpass) == false)
+            {
+                ViewBag.Er = "oldpass is not correct";
+
+                return View();
+            }
+            else
+            {
+                if (repass.Equals(newpass) == false)
+                {
+                    ViewBag.Er = "Repassword is not correct";
+                    return View();
+                }
+                else
+                {
+                    user.Password = newpass;
+                    db.Users.Update(user);
+                    db.SaveChanges();
+                    ViewBag.Mess = "Changepass successfully";
+                    return View();
+                }
+            }
+
         }
     }
 }

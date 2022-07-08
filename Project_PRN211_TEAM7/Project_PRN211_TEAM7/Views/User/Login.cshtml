@@ -64,14 +64,7 @@
   </div>
   <button style="width: 100%; margin-top: 30px;" class="login" type="submit">Login </button>
   <a style="text-decoration: none; color: black;  margin: 10%;"  asp-controller="User" asp-action="Register" >Create a new Account?</a>
-       </form> 
-        @if(@ViewBag.Message != null)
-        {
-             <form asp-controller="User" asp-action="Logout" method="POST">
-  <button style="width: 100%;" class="login" type="submit">Logout </button>
-       </form>
-        }
-       
+       </form>   
 </div>
 
 <!-- partial -->
