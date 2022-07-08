@@ -59,8 +59,14 @@
             <div class="col-6 col-md-4 order-3 order-md-3 text-right">
               <div class="site-top-icons">
                 <ul>
-                  <li><a href="#"><span class="icon icon-person"></span></a></li>
-                  <li><a href="#"><span class="icon icon-heart-o"></span></a></li>
+                                 @if(@ViewBag.Message != null){
+                                        <li><a asp-controller="User" asp-action="Login"><span class="icon icon-person">Hello: @ViewBag.Message</span></a></li>
+                                    }
+                                    else
+                                    {
+                                    <li><a asp-controller="User" asp-action="Login"><span class="icon icon-person"></span></a></li>
+                                        
+                                    }
                   <li>
                     <a href="cart.html" class="site-cart">
                       <span class="icon icon-shopping_cart"></span>
@@ -78,34 +84,31 @@
       <nav class="site-navigation text-right text-md-center" role="navigation">
         <div class="container">
           <ul class="site-menu js-clone-nav d-none d-md-block">
-            <li class="has-children">
-              <a href="index.html">Home</a>
-              <ul class="dropdown">
-                <li><a href="#">Menu One</a></li>
-                <li><a href="#">Menu Two</a></li>
-                <li><a href="#">Menu Three</a></li>
-                <li class="has-children">
-                  <a href="#">Sub Menu</a>
-                  <ul class="dropdown">
-                    <li><a href="#">Menu One</a></li>
-                    <li><a href="#">Menu Two</a></li>
-                    <li><a href="#">Menu Three</a></li>
-                  </ul>
-                </li>
-              </ul>
+           <li class="active">
+              <a asp-action="Index" asp-controller="Home">Home</a>
             </li>
             <li class="has-children">
-              <a href="about.html">About</a>
+              <a href="#">Brand</a>
               <ul class="dropdown">
-                <li><a href="#">Menu One</a></li>
-                <li><a href="#">Menu Two</a></li>
-                <li><a href="#">Menu Three</a></li>
+                                @foreach(var c in @ViewBag.Brand)
+                                {
+                                     <li><a href="/Product/Shop/@c.BrandId" >@c.BrandName</a></li>
+                                } 
+                               
               </ul>
             </li>
-            <li class="active"><a href="shop.html">Shop</a></li>
-            <li><a href="#">Catalogue</a></li>
-            <li><a href="#">New Arrivals</a></li>
+              <li><a asp-controller="Product" asp-action="Shop">Shop</a></li>
             <li><a href="contact.html">Contact</a></li>
+             @if (@ViewBag.Message != null)
+             {
+             <li class="has-children">
+               <a>My Account</a>
+              <ul class="dropdown">
+                <li><a asp-controller="User" asp-action="ChangePass">Change Password</a></li>
+                <li><a asp-controller="User" asp-action="Logout">Logout</a></li>
+              </ul>
+            </li>
+            }
           </ul>
         </div>
       </nav>
@@ -114,7 +117,7 @@
     <div class="bg-light py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Shop</strong></div>
+          <div class="col-md-12 mb-0"><a asp-action="Index" asp-controller="Home">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Shop</strong></div>
         </div>
       </div>
     </div>
@@ -167,12 +170,13 @@
                                      <div class="col-sm-6 col-lg-4 mb-4" >
                 <div class="block-4 text-center border">
                   <figure class="block-4-image">
-                    <a href="shop-single.html"><img src="~/images/@p.Image" alt="Image placeholder" class="img-fluid"></a>
+                    <a asp-controller="Product" asp-action="ProductDetail" asp-route-id= "@p.ProductId"><img src="~/images/@p.Image" alt="Image placeholder" class="img-fluid" ></a>
                   </figure>
                   <div class="block-4-text p-4">
                     <h3><a href="shop-single.html">@p.ProductId @p.ProductName</a></h3>
                     <p class="mb-0">Finding perfect t-shirt</p>
                     <p class="text-primary font-weight-bold">$@p.Price</p>
+                    
                   </div>
                 </div>
               </div>   
