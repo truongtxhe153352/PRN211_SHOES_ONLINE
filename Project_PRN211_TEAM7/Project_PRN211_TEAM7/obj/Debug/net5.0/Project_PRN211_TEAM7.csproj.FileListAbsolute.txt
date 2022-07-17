@@ -269,3 +269,6 @@ C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\
 C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Project_PRN211_TEAM7.genruntimeconfig.cache
 C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\ref\Project_PRN211_TEAM7.dll
 C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\User\ChangePass.cshtml.g.cs
+D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\Product\ProductDetail.cshtml.g.cs
+D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\User\ChangePass.cshtml.g.cs
+D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\ShoppingCart\Cart.cshtml.g.cs

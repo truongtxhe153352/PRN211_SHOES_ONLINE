@@ -2,83 +2,127 @@
 using System.Linq;
 using Project_PRN211_TEAM7.Models;
 using System.Collections.Generic;
-
+using Microsoft.Extensions.Configuration;
+using System;
 
 namespace Project_PRN211_TEAM7.Controllers
 {
     public class ProductController : Controller
     {
+        private readonly IConfiguration configuration;
+
+        public ProductController(IConfiguration configuration)
+        {
+            this.configuration = configuration;
+        }
 
         PROJECT_PRN211_SHOES_APPContext db = new PROJECT_PRN211_SHOES_APPContext();
-        public IActionResult Shop(int Id, int Page)
+
+        //public IActionResult Shop(int Id, int Page, string SearchText) // id của brand
+        //{
+        //    // lay danh sach category      
+        //    ViewBag.Brand = GetAllBrand();
+
+        //    // lay cac san pham trong brand yeu cau
+
+        //        if (Page <= 0)
+        //            Page = 1;
+
+        //        int PageSize = Convert.ToInt32(configuration.GetValue<string>("AppSettings:PageSize"));
+        //        ViewBag.products = GetProducts(Id, (Page - 1) * PageSize + 1, PageSize, SearchText);
+
+        //        // Lay du lieu hien thi thanh phan trang
+        //        int TotalProduct = GetNumberOfProducts(Id, SearchText);
+        //        int TotalPage = TotalProduct / PageSize;
+        //        if (TotalProduct % PageSize != 0) TotalPage++;
+
+        //        ViewData["TotalPage"] = TotalPage;
+        //        ViewData["CurrentPage"] = Page;
+        //        ViewData["CurrentBra"] = Id;
+
+
+        //    return View();
+        //}
+
+
+        public IActionResult Shop(int Id, int page, string SearchText) // id của brand
         {
-            // lay danh sach category
-           
+            // lay danh sach category      
             ViewBag.Brand = GetAllBrand();
+
             // lay cac san pham trong brand yeu cau
-            if (Page <= 0)
-            {
-                Page = 1;
-            }
-            int PageSize = 3;
-            List<Product> products = GetProduct(Id, (Page - 1) * PageSize + 1, PageSize);
+            if (page <= 0)
+                page = 1;
 
-            // Lay du lieu hien thi thanh phan trang
-            int TotalProduct = GetNumberOfProducts(Id);
+            int PageSize = Convert.ToInt32(configuration.GetValue<string>("AppSettings:PageSize"));
+            ViewBag.products = getproducts(Id, (page - 1) * PageSize + 1, PageSize, SearchText);
+            int TotalProduct = GetNumberOfProducts(Id, SearchText);
             int TotalPage = TotalProduct / PageSize;
-            if (TotalProduct % PageSize != 0)
-            {
-                TotalPage += 2;
-            }
-
+            if (TotalProduct % PageSize != 0) TotalPage++;
+            ViewBag.searchkey = SearchText;
             ViewData["TotalPage"] = TotalPage;
-            ViewData["CurrentPage"] = Page;
-            ViewData["CurrentBra"] = Id;
+            ViewData["CurrentPage"] = page;
+           // ViewData["CurrentBra"] = Id;
 
-            return View(products);
+            return View();
         }
 
         public List<Brand> GetAllBrand()
         {
-            using (var db = new PROJECT_PRN211_SHOES_APPContext())
-            {
-                return db.Brands.ToList();
-            }
+            return db.Brands.ToList();
         }
 
-        public List<Product> GetProduct(int BrandId, int Offset, int Count)
+        
+
+        public List<Product> getproducts(int brandId, int offset, int count, string searchtext)
         {
-            using (var db = new PROJECT_PRN211_SHOES_APPContext())
+            List<Product> list=new List<Product>();
+            if (searchtext != null)
             {
-                if (BrandId == 0) // get all product
-                {
-                    return db.Products.Skip(Offset - 1).Take(Count).ToList();
-                }
-                else
-                {
-                    return db.Products.Where(x => x.BrandId == BrandId).Skip(Offset - 1).Take(Count).ToList();
-                }
+                list= db.Products.Where(p => p.ProductName.Contains(searchtext)).ToList();
             }
+            else
+            {
+
+                list= db.Products.ToList();
+            }
+
+            if (brandId != 0)
+            {
+                list = (from b in list
+                        where b.BrandId == brandId
+                        select b).ToList();
+
+            }
+            return list.Skip(offset - 1).Take(count).ToList();
+  
         }
 
-        public int GetNumberOfProducts(int BrandId)
+        public int GetNumberOfProducts(int BrandId, string SearchText)
         {
-            using (var db = new PROJECT_PRN211_SHOES_APPContext())
-            {
-                if (BrandId == 0) // get all product
-                {
-                    return db.Products.Count();
-                }
-                else
-                {
-                    return db.Products.Where(x => x.BrandId == BrandId).Count();
-                }
-            }
-        }
+            List<Product> list = new List<Product>();
 
+            if (SearchText != null)
+            {
+                list = db.Products.Where(p => p.ProductName.Contains(SearchText)).ToList();
+            }
+            else
+            {
+                list = db.Products.ToList();
+            }
+            if (BrandId != 0)
+            {
+                list = (from b in list
+                        where b.BrandId == BrandId
+                        select b).ToList();
+            }
+            
+            return list.Count();
+
+        }
         public IActionResult ProductDetail(int id)
         {
-           
+
             Product product = db.Products.Find(id);
             var sizes = (from s in db.Sizes
                          where s.ProductId == id
