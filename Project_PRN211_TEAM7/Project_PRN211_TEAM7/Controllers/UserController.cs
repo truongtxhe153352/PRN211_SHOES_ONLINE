@@ -157,5 +157,77 @@ namespace Project_PRN211_TEAM7.Controllers
             }
 
         }
+        public IActionResult Profile()
+        {
+            ViewBag.Message = HttpContext.Session.GetString("username");
+            string username = HttpContext.Session.GetString("username");
+            if(username == null)
+            {
+                return RedirectToAction("Login", "User");
+            }
+            User user = db.Users.FirstOrDefault(u => u.UserName.Equals(username));
+            return View(user);
+        }
+
+        public IActionResult EditProfile()
+        {
+            ViewBag.Message = HttpContext.Session.GetString("username");
+            string username = HttpContext.Session.GetString("username");
+            ViewBag.PhoneEmpty = TempData["PhoneEmpty"];
+            ViewBag.AddressEmpty = TempData["AddressEmpty"];
+            ViewBag.PhoneValid = TempData["PhoneValid"];
+
+            if (username == null)
+            {
+                return RedirectToAction("Login", "User");
+            }
+            User user = db.Users.FirstOrDefault(u => u.UserName.Equals(username));
+            return View(user);
+        }
+        [HttpPost]
+        public IActionResult EditProfile(string phone, string address)
+        {
+            string username = HttpContext.Session.GetString("username");
+            if (username == null)
+            {
+                return RedirectToAction("Login", "User");
+            }
+            User u = db.Users.FirstOrDefault(p => p.UserName == username);
+            if (phone == null)
+            {
+                TempData["PhoneEmpty"] = "Input your phone";
+                return RedirectToAction("EditProfile", "User");
+            }
+            if(address == null)
+            {
+                TempData["AddressEmpty"] = "Input your address";
+                return RedirectToAction("EditProfile", "User");
+            }
+            Regex re = new Regex("[0-9]");
+            if (phone.Length > 8)
+            {
+                for (int i = 0; i < phone.Length; i++)
+                {
+                    if (!re.IsMatch(phone[i] + ""))
+                    {
+                        TempData["PhoneValid"] = "Please enter valid phone number";
+                        return RedirectToAction("EditProfile", "User");
+
+                    }
+                }
+            }
+            else
+            {
+                TempData["PhoneValid"] = "Please enter valid phone number > 8";
+                return RedirectToAction("EditProfile", "User");
+
+            }
+            u.Phone = phone;
+            u.Address = address;
+            db.Users.Update(u);
+            db.SaveChanges();
+            return RedirectToAction("Profile", "User");
+
+        }
     }
 }

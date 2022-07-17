@@ -78,16 +78,28 @@ namespace Project_PRN211_TEAM7.Controllers
 
         public IActionResult ProductDetail(int id)
         {
-           
-            Product product = db.Products.Find(id);
+
+            var product = db.Products.Find(id);
+            int b = (int)product.BrandId;
             var sizes = (from s in db.Sizes
                          where s.ProductId == id
                          select s).ToList();
-            var quantity = db.Sizes.Sum(i => i.Quantity);
+            var quantity = db.Sizes.Where(item => item.ProductId == id).Sum(i => i.Quantity);
             ViewBag.Sizes = sizes;
             ViewBag.Quantity = quantity;
             ViewBag.Product = product;
-            return View();
+            var list = (from pro in db.Products
+                       where pro.BrandId == b
+                       select pro).ToList();
+            foreach (var item in list)
+            {
+                if(item.ProductId == id)
+                {
+                    list.Remove(item);
+                    break;
+                }
+            }
+            return View(list);
         }
     }
 }
