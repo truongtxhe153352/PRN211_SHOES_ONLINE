@@ -21,6 +21,7 @@ namespace Project_PRN211_TEAM7.Controllers
                 Page = 1;
             }
             int PageSize = 3;
+
             List<Product> products = GetProduct(Id, (Page - 1) * PageSize + 1, PageSize);
 
             // Lay du lieu hien thi thanh phan trang

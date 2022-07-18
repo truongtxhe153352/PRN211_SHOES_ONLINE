@@ -98,19 +98,17 @@
             <img src="~/images/@ViewBag.Product.Image" alt="Image" class="img-fluid">
           </div>
           <div class="col-md-6">
+              <form>
             <h2 class="text-black">@ViewBag.Product.ProductName</h2>
             <p>@ViewBag.Product.Description</p>
             <p><strong class="text-primary h4">$@ViewBag.Product.Price</strong></p>
-            <div class="mb-1 d-flex">
-                SIZE &nbsp;&nbsp;&nbsp;&nbsp;<select>
-                    @foreach(var s in @ViewBag.Sizes){
-                    <option>
+                       <div class="mb-1 d-flex">
+                           @foreach(var s in @ViewBag.Sizes){
               <label for="option-sm" class="d-flex mr-3 mb-3">
-                <span class="d-inline-block mr-2" style="top:-2px; position: relative;"></span> <span class="d-inline-block text-black">@s.Size1</span>
+                <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-sm" name="shop-sizes" value="@s.Size1"></span> <span class="d-inline-block text-black">@s.Size1</span>
               </label>
-                 </option>
-                    }
-              </select>
+                           }
+              
             </div>
             <p>Quantity &nbsp;&nbsp;&nbsp;&nbsp;<strong class="text-primary h4">@ViewBag.Quantity</strong></p>
             <div class="mb-5" style="margin-top: 10px">
@@ -126,7 +124,7 @@
             </div>
            
             <p><a href="cart.html" class="buy-now btn btn-sm btn-primary">Add To Cart</a></p>
-
+            </form>
           </div>
         </div>
       </div>
