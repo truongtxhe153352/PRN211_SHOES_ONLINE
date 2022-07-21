@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "F3rkmuvh+U9XkoOP567VKPmVlR21oZ/pF3DDmVjSic3chDcPJseLW2D/nFJjb1ug40n43rt/aWYhyAfSCJBgvQ==",
+  "dgSpecHash": "6kN6Vwvg6ns1eVlHxu44c/kvU2g41WlnLCaOc4ismwz97WWFVYfko85LYNP4qU4oK27qEuIOO5wHb7MI4RgFGg==",
   "success": true,
-  "projectFilePath": "E:\\camera\\SelfStudy\\Project_Test\\1\\Project_PRN211_TEAM7\\Project_PRN211_TEAM7\\Project_PRN211_TEAM7.csproj",
+  "projectFilePath": "C:\\Users\\HP\\Documents\\GitHub\\PRN211_SHOES_ONLINE\\Project_PRN211_TEAM7\\Project_PRN211_TEAM7\\Project_PRN211_TEAM7.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\2.1.1\\microsoft.aspnetcore.cryptography.internal.2.1.1.nupkg.sha512",

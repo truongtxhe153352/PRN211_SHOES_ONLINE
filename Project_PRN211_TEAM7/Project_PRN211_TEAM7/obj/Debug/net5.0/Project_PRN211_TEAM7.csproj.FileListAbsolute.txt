@@ -184,9 +184,6 @@ C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PR
 C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Project_PRN211_TEAM7.TagHelpers.output.cache
 C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Project_PRN211_TEAM7.RazorCoreGenerate.cache
 C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\Home\Login.cshtml.g.cs
-C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\Home\Register.cshtml.g.cs
-C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\Home\Shop.cshtml.g.cs
 C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Project_PRN211_TEAM7.RazorTargetAssemblyInfo.cache
 C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Project_PRN211_TEAM7.RazorTargetAssemblyInfo.cs
 C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Project_PRN211_TEAM7.Views.pdb
@@ -347,3 +344,13 @@ E:\camera\SelfStudy\Project_Test\1\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj
 E:\camera\SelfStudy\Project_Test\1\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\ShoppingCart\BuySuccess.cshtml.g.cs
 E:\camera\SelfStudy\Project_Test\1\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\User\EditProfile.cshtml.g.cs
 E:\camera\SelfStudy\Project_Test\1\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\User\Profile.cshtml.g.cs
+C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\Product\ProductDetail.cshtml.g.cs
+C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\Product\Shop.cshtml.g.cs
+C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\ShoppingCart\BuySuccess.cshtml.g.cs
+C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\ShoppingCart\Cart.cshtml.g.cs
+C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\ShoppingCart\CheckOut.cshtml.g.cs
+C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\User\ChangePass.cshtml.g.cs
+C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\User\EditProfile.cshtml.g.cs
+C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\User\Login.cshtml.g.cs
+C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\User\Profile.cshtml.g.cs
+C:\Users\HP\Documents\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\User\Register.cshtml.g.cs
