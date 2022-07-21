@@ -92,19 +92,7 @@
                             <ul class="dropdown">
                                 @foreach (var c in @ViewBag.Brand)
                                 {
-                                     <div class="col-sm-6 col-lg-4 mb-4" >
-                <div class="block-4 text-center border">
-                  <figure class="block-4-image">
-                    <a asp-controller="Product" asp-action="ProductDetail" asp-route-id= "@p.ProductId"><img src="~/images/@p.Image" alt="Image placeholder" class="img-fluid" style="height: 300px;width:500px"></a>
-                  </figure>
-                  <div class="block-4-text p-4">
-                    <h3><a href="shop-single.html">@p.ProductId @p.ProductName</a></h3>
-                    <p class="mb-0">Finding perfect t-shirt</p>
-                    <p class="text-primary font-weight-bold">$@p.Price</p>
-                    
-                  </div>
-                </div>
-              </div>   
+                                    <li><a href="/Product/Shop/@c.BrandId">@c.BrandName</a></li>
                                 }
 
                             </ul>
