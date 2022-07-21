@@ -13,6 +13,7 @@ namespace Project_PRN211_TEAM7.Controllers
     {
         PROJECT_PRN211_SHOES_APPContext db = new PROJECT_PRN211_SHOES_APPContext();
 
+        // Session lưu một mảng cartiterm
         public List<CartItem> Carts
         {
             get
@@ -30,8 +31,40 @@ namespace Project_PRN211_TEAM7.Controllers
             return View(Carts);
         }
 
+        //public IActionResult AddToCart(int id, int SoLuong, int sizes)
+        //{
+           
+
+        //    var myCart = Carts;
+        //    var item = myCart.SingleOrDefault(p => p.ProductId == id);
+
+        //    if (item == null)//chưa có
+        //    {
+        //        var hangHoa = db.Products.SingleOrDefault(p => p.ProductId == id);
+
+        //            item = new CartItem
+        //            {
+        //                ProductId = id,
+        //                ProductName = hangHoa.ProductName,
+        //                Price = hangHoa.Price.Value,
+        //                Quantity = SoLuong,
+        //                Image = hangHoa.Image,
+        //                Size = sizes
+        //            };
+        //            myCart.Add(item);
+        //    }
+        //    else
+        //    {
+        //        item.Quantity += SoLuong;
+        //    }
+
+        //    HttpContext.Session.Set("GioHang", myCart);
+        //    return RedirectToAction("Cart");
+        //}
+
         public IActionResult AddToCart(int id, int SoLuong, int sizes)
         {
+
 
             var myCart = Carts;
             var item = myCart.SingleOrDefault(p => p.ProductId == id);
@@ -55,6 +88,7 @@ namespace Project_PRN211_TEAM7.Controllers
             {
                 item.Quantity += SoLuong;
             }
+
             HttpContext.Session.Set("GioHang", myCart);
             return RedirectToAction("Cart");
         }
@@ -87,6 +121,8 @@ namespace Project_PRN211_TEAM7.Controllers
             HttpContext.Session.Set("GioHang", myCart);
             return RedirectToAction(nameof(Cart));
         }
+
+       
 
     }
 

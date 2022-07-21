@@ -18,52 +18,24 @@ namespace Project_PRN211_TEAM7.Controllers
 
         PROJECT_PRN211_SHOES_APPContext db = new PROJECT_PRN211_SHOES_APPContext();
 
-        //public IActionResult Shop(int Id, int Page, string SearchText) // id của brand
-        //{
-        //    // lay danh sach category      
-        //    ViewBag.Brand = GetAllBrand();
 
-        //    // lay cac san pham trong brand yeu cau
-
-        //        if (Page <= 0)
-        //            Page = 1;
-
-        //        int PageSize = Convert.ToInt32(configuration.GetValue<string>("AppSettings:PageSize"));
-        //        ViewBag.products = GetProducts(Id, (Page - 1) * PageSize + 1, PageSize, SearchText);
-
-        //        // Lay du lieu hien thi thanh phan trang
-        //        int TotalProduct = GetNumberOfProducts(Id, SearchText);
-        //        int TotalPage = TotalProduct / PageSize;
-        //        if (TotalProduct % PageSize != 0) TotalPage++;
-
-        //        ViewData["TotalPage"] = TotalPage;
-        //        ViewData["CurrentPage"] = Page;
-        //        ViewData["CurrentBra"] = Id;
-
-
-        //    return View();
-        //}
-
-
-        public IActionResult Shop(int Id, int page, string SearchText) // id của brand
+        public IActionResult Shop(int Id, int page, string SearchText, int filterPrice) // id của brand
         {
+            
             // lay danh sach category      
             ViewBag.Brand = GetAllBrand();
 
-            // lay cac san pham trong brand yeu cau
-            if (page <= 0)
+            // lay cac san pham trong brand yeu cau, tại Page yêu cầu
+            if (page <= 0) 
                 page = 1;
 
             int PageSize = Convert.ToInt32(configuration.GetValue<string>("AppSettings:PageSize"));
-            ViewBag.products = getproducts(Id, (page - 1) * PageSize + 1, PageSize, SearchText);
-            int TotalProduct = GetNumberOfProducts(Id, SearchText);
+            ViewBag.products = getproductsFilterPrice(Id, (page - 1) * PageSize + 1, PageSize, SearchText, filterPrice);
+            int TotalProduct = GetNumberOfProductsFilter(Id, SearchText, filterPrice);
             int TotalPage = TotalProduct / PageSize;
             if (TotalProduct % PageSize != 0) TotalPage++;
             ViewBag.searchkey = SearchText;
             ViewData["TotalPage"] = TotalPage;
-            ViewData["CurrentPage"] = page;
-           // ViewData["CurrentBra"] = Id;
-
             return View();
         }
 
@@ -72,19 +44,18 @@ namespace Project_PRN211_TEAM7.Controllers
             return db.Brands.ToList();
         }
 
-        
 
-        public List<Product> getproducts(int brandId, int offset, int count, string searchtext)
+        public List<Product> getproductsFilterPrice(int brandId, int offset, int count, string searchtext, int fitlerPrice)
         {
-            List<Product> list=new List<Product>();
+            List<Product> list = new List<Product>();
             if (searchtext != null)
             {
-                list= db.Products.Where(p => p.ProductName.Contains(searchtext)).ToList();
+                list = db.Products.Where(p => p.ProductName.Contains(searchtext)).ToList();
             }
             else
             {
 
-                list= db.Products.ToList();
+                list = db.Products.ToList();
             }
 
             if (brandId != 0)
@@ -94,11 +65,21 @@ namespace Project_PRN211_TEAM7.Controllers
                         select b).ToList();
 
             }
-            return list.Skip(offset - 1).Take(count).ToList();
-  
-        }
 
-        public int GetNumberOfProducts(int BrandId, string SearchText)
+            if (fitlerPrice == 1)
+            {
+                list = db.Products.OrderByDescending(p => p.Price).ToList();
+            }
+            else if (fitlerPrice == -1)
+            {
+                list = db.Products.OrderBy(p => p.Price).ToList();
+            }
+
+            return list.Skip(offset - 1).Take(count).ToList();
+
+        }
+        
+             public int GetNumberOfProductsFilter(int BrandId, string SearchText, int fitlerPrice)
         {
             List<Product> list = new List<Product>();
 
@@ -116,10 +97,22 @@ namespace Project_PRN211_TEAM7.Controllers
                         where b.BrandId == BrandId
                         select b).ToList();
             }
-            
+
+
+            if (fitlerPrice == 1)
+            {
+                list = db.Products.OrderByDescending(p => p.Price).ToList();
+            }
+            else if (fitlerPrice == -1)
+            {
+                list = db.Products.OrderBy(p => p.Price).ToList();
+            }
+
+
             return list.Count();
 
         }
+
         public IActionResult ProductDetail(int id)
         {
 
