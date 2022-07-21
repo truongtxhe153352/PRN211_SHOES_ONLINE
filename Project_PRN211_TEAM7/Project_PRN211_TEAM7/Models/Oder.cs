@@ -18,6 +18,15 @@ namespace Project_PRN211_TEAM7.Models
         public DateTime? OrderDate { get; set; }
         public int? CustomerId { get; set; }
 
+        public Oder(int orderId, int? quantity, double? totalPrice, DateTime? orderDate, int? customerId)
+        {
+            OrderId = orderId;
+            Quantity = quantity;
+            TotalPrice = totalPrice;
+            OrderDate = orderDate;
+            CustomerId = customerId;
+        }
+
         public virtual User Customer { get; set; }
         public virtual ICollection<OderDetail> OderDetails { get; set; }
     }

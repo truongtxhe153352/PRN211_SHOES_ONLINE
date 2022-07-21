@@ -157,11 +157,12 @@ namespace Project_PRN211_TEAM7.Controllers
             }
 
         }
+
         public IActionResult Profile()
         {
             ViewBag.Message = HttpContext.Session.GetString("username");
             string username = HttpContext.Session.GetString("username");
-            if(username == null)
+            if (username == null)
             {
                 return RedirectToAction("Login", "User");
             }
@@ -198,7 +199,7 @@ namespace Project_PRN211_TEAM7.Controllers
                 TempData["PhoneEmpty"] = "Input your phone";
                 return RedirectToAction("EditProfile", "User");
             }
-            if(address == null)
+            if (address == null)
             {
                 TempData["AddressEmpty"] = "Input your address";
                 return RedirectToAction("EditProfile", "User");

@@ -22,5 +22,11 @@ namespace Project_PRN211_TEAM7.Controllers
             ViewBag.Brand = db.Brands.ToList();
             return View(db.Products.ToList()) ;
         }
+
+        
+
+       
+        
+
     }
 }
