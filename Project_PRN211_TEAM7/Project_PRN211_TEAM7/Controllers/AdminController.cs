@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Project_PRN211_TEAM7.Models;
 using System;
 using System.Collections.Generic;
@@ -14,8 +15,7 @@ namespace Project_PRN211_TEAM7.Controllers
  
         public IActionResult ProductManage(int? page, int id)
         {
-    
-
+ 
             if (page == null) page = 1;
             int pageSize = 3;
             int pageNumber = (page ?? 1);
@@ -23,15 +23,21 @@ namespace Project_PRN211_TEAM7.Controllers
             if (id == 0)
             {
                 products = db.Products.ToList();
+                ViewBag.Brand = db.Brands.ToList();
+                ViewBag.brandId = id;
+                ViewBag.type = 1;
+                return View(products.ToPagedList(pageNumber, pageSize));
             }
             else
             {
                 products = db.Products.Where(item => item.BrandId == id).ToList();
+                ViewBag.Brand = db.Brands.ToList();
+                ViewBag.brandId = id;
+                ViewBag.type = 2;
+                return View(products.ToPagedList(pageNumber, pageSize));
             }
 
-            ViewBag.Brand = db.Brands.ToList();
-            ViewBag.brandId = id;
-            return View(products.ToPagedList(pageNumber, pageSize));
+           
 
         }
 
@@ -43,16 +49,14 @@ namespace Project_PRN211_TEAM7.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddProduct(string name,int brand ,string image ,string price, string discount, string description,string size,string quantity,string createdate)
+        public IActionResult AddProduct(string name,int brand ,string image ,string price, string discount, string description,string size,string quantity)
         {
             ViewBag.name = name;    
             ViewBag.image = image;
             ViewBag.price = price;  
             ViewBag.discount = discount;
             ViewBag.description = description;
-            ViewBag.createdate = createdate;
             ViewBag.size = size;
-            ViewBag.createdate = quantity;
             ViewBag.brand = brand;
             var listBrand = db.Brands.ToList();
             ViewBag.listbrand = listBrand;
@@ -90,16 +94,8 @@ namespace Project_PRN211_TEAM7.Controllers
                 ViewBag.Mess = "Discount must be number";
                 return View();
             }
-            // xét xem datetime đúng định dạng ko
-            try
-            {
-                date = DateTime.Parse(createdate);
-            }
-            catch (Exception e)
-            {
-                ViewBag.Mess = "Date is not in the correct format";
-                return View();
-            }
+            
+           
             //Xét xem size có phải số ko
             try
             {
@@ -143,11 +139,6 @@ namespace Project_PRN211_TEAM7.Controllers
                 ViewBag.Mess = "quantity must be > 0";
                 return View();
             }
-            //else if (now < date || now > date)
-            //{
-            //    ViewBag.Mess = "Invalid date";
-            //    return View();
-            //}
             else 
             {
                 Product tempProduct = db.Products.FirstOrDefault(item => item.ProductName.ToUpper().Equals(name.ToUpper()));
@@ -180,7 +171,7 @@ namespace Project_PRN211_TEAM7.Controllers
                     p.Image = image;
                     p.Description = description;
                     p.Discount = discountPro;
-                    p.CreatedDate = date;
+                    p.CreatedDate = now;
                     Size si = new Size();
                     db.Products.Add(p);
                     db.SaveChanges();
@@ -211,7 +202,7 @@ namespace Project_PRN211_TEAM7.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult UpdateProduct(int id, string name,int quantity ,int brand, string image, string price, string discount, string description,string createdate, DateTime modifidate)
+        public IActionResult UpdateProduct(int id, string name,int quantity ,int brand, string image, string price, string discount, string description,string createdate, string modifidate)
         {
             
             ViewBag.id = id;
@@ -230,6 +221,7 @@ namespace Project_PRN211_TEAM7.Controllers
             ViewBag.discount = discount;
             ViewBag.description = description;
             ViewBag.createdate = createdate;
+            ViewBag.modifidate = modifidate;
             ViewBag.quantity = quantity;
             ViewBag.brand = brand;
             var brands = db.Brands.ToList();
@@ -278,11 +270,6 @@ namespace Project_PRN211_TEAM7.Controllers
                 return View();
 
             }
-            else if (now.Date < modifidate.Date || now.Date > modifidate.Date)
-            {
-                ViewBag.Mess = "Invalid date";
-                return View();
-            }
             else
             {
                 Product p = db.Products.Find(id);
@@ -301,9 +288,10 @@ namespace Project_PRN211_TEAM7.Controllers
                 }
                 p.Description = description;
                 p.Discount = discountPro;
-                p.ModifiedDate = modifidate;
+                p.ModifiedDate = now;
                 db.Products.Update(p);
                 db.SaveChanges();
+                ViewBag.product = p;
                 return View();  
             }
 
@@ -354,7 +342,12 @@ namespace Project_PRN211_TEAM7.Controllers
                 sizePro.Size1 = size;
                 sizePro.ProductId = id;
                 sizePro.Quantity = quantityPro;
+                Product p = db.Products.SingleOrDefault(item => item.ProductId == id);
+                p.ProductId = id;
+                DateTime now = DateTime.Now;
+                p.ModifiedDate = now;
                 db.Sizes.Update(sizePro);
+                db.Products.Update(p);
                 db.SaveChanges();
                 return View();
             } 
@@ -365,15 +358,23 @@ namespace Project_PRN211_TEAM7.Controllers
           
             
             List<Size> sizes = db.Sizes.Where(item => item.ProductId == id).ToList();
-            if(sizes.Count != 0)
+
+            if (sizes.Count != 0)
             {
-                ViewBag.Mess = "Không thể xóa prodiuct do có xuất hiện trong bảng size";
+                HttpContext.Session.SetString("messdelete", "Không thể xóa product do có xuất hiện trong bảng size");
                 return RedirectToAction("ProductManage");
             }
-            var p = db.Products.Find(id);
-            db.Products.Remove(p);
-            db.SaveChanges();
-            return RedirectToAction("ProductManage");
+            else
+            {
+                if (HttpContext.Session.GetString("messdelete") != null)
+                {
+                    HttpContext.Session.Remove("messdelete");
+                }
+                var p = db.Products.Find(id);
+                db.Products.Remove(p);
+                db.SaveChanges();
+                return RedirectToAction("ProductManage");
+            }
 
 
         }

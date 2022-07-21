@@ -93,6 +93,7 @@ namespace Project_PRN211_TEAM7.Controllers
                     if (user.Password.Equals(password))
                     {
                         HttpContext.Session.SetString("username", username);
+                        HttpContext.Session.SetString("role", user.Role);
                         return RedirectToAction("Index","Home");
                     }
                     else
@@ -118,6 +119,7 @@ namespace Project_PRN211_TEAM7.Controllers
         public ActionResult Logout()
         {
             HttpContext.Session.Remove("username");
+            HttpContext.Session.Remove("role");
             return RedirectToAction("Index", "Home");
         }
 

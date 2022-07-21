@@ -36,7 +36,7 @@
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
-                            <a href="productmanage"><h2 style="color: white">Manage <b>Product</b></h2></a>
+                            <a asp-controller="Admin" asp-action="ProductManage"><h2 style="color: white">Manage <b>Product</b></h2></a>
                         </div>
                     </div>
                 </div>
@@ -98,9 +98,10 @@
                     </div>
                      <div class="form-group">
                         <label>ModifiedDate</label>
-                        <input name="modifidate" type="date"  class="form-control"  required>
+                        <input name="modifidate" type="text"  class="form-control"  value="@ViewBag.product.ModifiedDate" readonly>
                     </div>
                         <div class="modal-footer" style="margin-top: 30px">
+                            <a asp-controller="Admin" asp-action="ProductManage"><button type="button" class="btn btn-primary">Back to List</button></a>
                             <input type="submit"  class="btn btn-success" value="SAVE">
                         </div>
                     </form>
@@ -159,9 +160,10 @@
                     </div>
                      <div class="form-group">
                         <label>ModifiedDate</label>
-                        <input name="modifidate" type="date"  class="form-control" value="@ViewBag.modifidate" required>
+                        <input name="modifidate" type="text"  class="form-control" value="@ViewBag.modifidate" readonly>
                     </div>
                         <div class="modal-footer" style="margin-top: 30px">
+                            <a asp-controller="Admin" asp-action="ProductManage"><button type="button" class="btn btn-primary">Back to List</button></a>
                             <input type="submit"  class="btn btn-success" value="SAVE">
                         </div>
                     </form>

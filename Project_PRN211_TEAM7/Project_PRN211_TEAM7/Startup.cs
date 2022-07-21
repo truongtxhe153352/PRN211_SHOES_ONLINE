@@ -38,7 +38,7 @@ namespace Project_PRN211_TEAM7
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Admin}/{action=ProductManage}/{Id=0}/{Page=1}"
+                    pattern: "{controller=Home}/{action=Index}/{id=0}/{page=1}"
                     );
             });
 
