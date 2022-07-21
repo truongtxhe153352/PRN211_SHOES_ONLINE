@@ -1,15 +1,8 @@
 ﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
-@model List<Product>
-@using Project_PRN211_TEAM7.Models
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>HomePage</title>
+    <title>Buy Success</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -23,9 +16,9 @@
     <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
 
 
-   <link rel="stylesheet" href="~/css/aos.css">
+    <link rel="stylesheet" href="~/css/aos.css">
 
-   <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/style.css">
     
   </head>
   <body>
@@ -95,77 +88,27 @@
             </nav>
         </header>
 
-    <div class="site-blocks-cover" style="background-image: url(images/hero_1.jpg);" data-aos="fade">
+    <div class="bg-light py-3">
       <div class="container">
-        <div class="row align-items-start align-items-md-center justify-content-end">
-          <div class="col-md-5 text-center text-md-left pt-5 pt-md-0">
-            <h1 class="mb-2">Final project of Team 7 - SE1610</h1>
-            <div class="intro-text text-center text-md-left">
-              <p class="mb-4">A web app that allows users to manage all product purchases, as well as add, edit and delete products of a shoe store.</p>
-              <p>
-                <a casp-controller="Home" asp-action="Index" class="btn btn-sm btn-primary">Home</a>
-              </p>
-            </div>
+        <div class="row">
+          <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Contact</strong></div>
+        </div>
+      </div>
+    </div>  
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <span class="icon-check_circle display-3 text-success"></span>
+            <h2 class="display-3 text-black">Thank you!</h2>
+            <p class="lead mb-5">You order was successfuly completed.</p>
+            <p><a asp-controller="Product" asp-action="Shop"  class="btn btn-sm btn-primary">Back to shop</a></p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="site-section site-blocks-2">
-      <div class="container">
-          <div class="row justify-content-center">
-          <div class="col-md-7 site-section-heading text-center pt-4">
-            <h2>TOP 3</h2>
-          </div>
-        </div>
-        <div class="row">
-                    @for (var i = 0; i < 3; i++)
-                    {
-                        <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="">
-                        <a class="block-2-item" href="#">
-                        <figure class="image">
-                       <a asp-controller="Product" asp-action="ProductDetail" asp-route-id= "@Model.ElementAt(i).ProductId"> <img src="images/@Model.ElementAt(i).Image" alt="" class="img-fluid"></a>
-                        </figure>
-                        <div class="text">
-                        <span class="text-uppercase">Collections</span>
-                        <h3>@Model.ElementAt(i).Brand.BrandName</h3>
-                        </div>
-                        </a>
-                        </div> 
-                      }
-        </div>
-      </div>
-    </div>
-    <div class="site-section block-3 site-blocks-2 bg-light">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-7 site-section-heading text-center pt-4">
-            <h2>Featured Products</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="nonloop-block-3 owl-carousel">
-                @for (int i = 0; i < 5; i++)
-                {
-              <div class="item">
-                <div class="block-4 text-center">
-                  <figure class="block-4-image">
-                  <a asp-controller="Product" asp-action="ProductDetail" asp-route-id= "@Model.ElementAt(i).ProductId">  <img src="images/@Model.ElementAt(i).Image" alt="Image placeholder" class="img-fluid"></a>
-                  </figure>
-                  <div class="block-4-text p-4">
-                    <h3><a href="#">@Model.ElementAt(i).ProductName</a></h3>
-                    <p class="mb-0">Finding perfect shoe</p>
-                    <p class="text-primary font-weight-bold">@Model.ElementAt(i).Price</p>
-                  </div>
-                </div>
-              </div>
-            }
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <footer class="site-footer border-top">
       <div class="container">
         <div class="row">
@@ -201,7 +144,7 @@
           <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
             <h3 class="footer-heading mb-4">Promo</h3>
             <a href="#" class="block-6">
-              <img src="images/hero_1.jpg" alt="Image placeholder" class="img-fluid rounded mb-4">
+              <img src="~/images/hero_1.jpg" alt="Image placeholder" class="img-fluid rounded mb-4">
               <h3 class="font-weight-light  mb-0">Finding Your Perfect Shoes</h3>
               <p>Promo from  nuary 15 &mdash; 25, 2019</p>
             </a>
@@ -212,7 +155,7 @@
               <ul class="list-unstyled">
                 <li class="address">203 Fake St. Mountain View, San Francisco, California, USA</li>
                 <li class="phone"><a href="tel://23923929210">+2 392 3929 210</a></li>
-                <li class="email">Team7@domain.com</li>
+                <li class="email">emailaddress@domain.com</li>
               </ul>
             </div>
 
@@ -231,7 +174,7 @@
           <div class="col-md-12">
             <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This Shop is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="#" target="_blank" class="text-primary">Team 7</a>
+            Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>
