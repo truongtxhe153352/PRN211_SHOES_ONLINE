@@ -88,7 +88,6 @@ namespace Project_PRN211_TEAM7.Controllers
             {
                 item.Quantity += SoLuong;
             }
-
             HttpContext.Session.Set("GioHang", myCart);
             return RedirectToAction("Cart");
         }
@@ -122,7 +121,37 @@ namespace Project_PRN211_TEAM7.Controllers
             return RedirectToAction(nameof(Cart));
         }
 
-       
+        public IActionResult CheckOut()
+        {
+            return View(Carts);
+        }
+
+        public IActionResult BuySuccess()
+        {
+           string name = HttpContext.Session.GetString("username");
+           if(name == null)
+            {
+                return RedirectToAction("Login", "User");
+            }
+            User user = db.Users.SingleOrDefault(u => u.UserName.Equals(name));
+            double Total = Carts.Sum(s => s.ThanhTien);
+            int quantity = Carts.Sum(q => q.Quantity);
+            DateTime localDate = DateTime.Now;
+            List<Oder> lst = db.Oders.ToList();
+            int count = lst.Count + 1;
+            ViewBag.count = count;
+            Oder order = new Oder(count, quantity, Total, localDate, user.UserId);
+            db.Oders.Add(order);
+            db.SaveChanges();
+            foreach (var item in Carts)
+            {
+                OderDetail orderDetails = new OderDetail(count, item.ProductId, item.Quantity, item.ThanhTien);
+                db.OderDetails.Add(orderDetails);
+                db.SaveChanges();
+            }
+            HttpContext.Session.Remove("GioHang");
+            return View();
+        }
 
     }
 
