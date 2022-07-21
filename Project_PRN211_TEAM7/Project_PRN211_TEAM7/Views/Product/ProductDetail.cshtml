@@ -94,6 +94,7 @@
         <div class="site-section">
       <div class="container">
         <div class="row">
+
           <div class="col-md-6">
             <img src="~/images/@ViewBag.Product.Image" alt="Image" class="img-fluid">
           </div>
@@ -101,16 +102,15 @@
             <h2 class="text-black">@ViewBag.Product.ProductName</h2>
             <p>@ViewBag.Product.Description</p>
             <p><strong class="text-primary h4">$@ViewBag.Product.Price</strong></p>
+            <form asp-controller="ShoppingCart" asp-action="AddToCart" asp-route-id="@ViewBag.Product.ProductId" >
+
             <div class="mb-1 d-flex">
-                SIZE &nbsp;&nbsp;&nbsp;&nbsp;<select>
-                    @foreach(var s in @ViewBag.Sizes){
-                    <option>
+                SIZE &nbsp;&nbsp;&nbsp;&nbsp;
+                   @foreach(var s in @ViewBag.Sizes){
               <label for="option-sm" class="d-flex mr-3 mb-3">
-                <span class="d-inline-block mr-2" style="top:-2px; position: relative;"></span> <span class="d-inline-block text-black">@s.Size1</span>
+                <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-sm" name="sizes" value="@s.Size1"></span> <span class="d-inline-block text-black">@s.Size1</span>
               </label>
-                 </option>
-                    }
-              </select>
+                           }
             </div>
             <p>Quantity &nbsp;&nbsp;&nbsp;&nbsp;<strong class="text-primary h4">@ViewBag.Quantity</strong></p>
             <div class="mb-5" style="margin-top: 10px">
@@ -118,16 +118,15 @@
               <div class="input-group-prepend">
                 <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
               </div>
-              <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+              <input type="number" class="form-control text-center" value="1" name="SoLuong" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
               <div class="input-group-append">
                 <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
               </div>
             </div>
-            </div>
-           
-            <p><a href="cart.html" class="buy-now btn btn-sm btn-primary">Add To Cart</a></p>
+                    </div>
+                    <p><button class="buy-now btn btn-sm btn-primary">Add To Cart</button></p>
+            </form>
 
-          </div>
         </div>
       </div>
     </div>
@@ -175,5 +174,6 @@
 
   <script src="~/js/main.js"></script>
     
+
   </body>
 </html>

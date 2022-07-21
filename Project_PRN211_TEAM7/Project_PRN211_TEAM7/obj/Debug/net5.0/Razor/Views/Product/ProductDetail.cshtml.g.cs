@@ -13,7 +13,7 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 2 "C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Product\ProductDetail.cshtml"
+#line 2 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Product\ProductDetail.cshtml"
 using Project_PRN211_TEAM7.Models;
 
 #line default
@@ -398,7 +398,9 @@ AddHtmlAttributeValue("", 3674, ViewBag.Product.Image, 3674, 22, false);
 #line default
 #line hidden
 #nullable disable
-                WriteLiteral("</strong></p>\r\n            <div class=\"mb-1 d-flex\">\r\n                SIZE &nbsp;&nbsp;&nbsp;&nbsp;<select>\r\n");
+                WriteLiteral("</strong></p>\r\n            ");
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "757e58823ea57554a3ff06cffcffff35a21858e828835", async() => {
+                    WriteLiteral("\r\n\r\n            <div class=\"mb-1 d-flex\">\r\n                SIZE &nbsp;&nbsp;&nbsp;&nbsp;\r\n");
 #nullable restore
 #line 106 "C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Product\ProductDetail.cshtml"
                      foreach(var s in @ViewBag.Sizes){
@@ -416,11 +418,74 @@ AddHtmlAttributeValue("", 3674, ViewBag.Product.Image, 3674, 22, false);
 #line default
 #line hidden
 #nullable disable
-                    WriteLiteral("</span>\r\n              </label>\r\n                 ");
+                    EndWriteAttribute();
+                    WriteLiteral("></span> <span class=\"d-inline-block text-black\">");
+#nullable restore
+#line 133 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Product\ProductDetail.cshtml"
+                                                                                                                                                                                                    Write(s.Size1);
+
+#line default
+#line hidden
+#nullable disable
+                    WriteLiteral("</span>\r\n              </label>\r\n");
+#nullable restore
+#line 135 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Product\ProductDetail.cshtml"
+                           }
+
+#line default
+#line hidden
+#nullable disable
+                    WriteLiteral("            </div>\r\n            <p>Quantity &nbsp;&nbsp;&nbsp;&nbsp;<strong class=\"text-primary h4\">");
+#nullable restore
+#line 137 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Product\ProductDetail.cshtml"
+                                                                           Write(ViewBag.Quantity);
+
+#line default
+#line hidden
+#nullable disable
+                    WriteLiteral(@"</strong></p>
+
+                  <div class=""mb-5"">
+                         <div class=""input-group mb-3"" style=""max-width: 120px;"">
+              <div class=""input-group-prepend"">
+                <button class=""btn btn-outline-primary js-btn-minus"" type=""button"">&minus;</button>
+              </div>
+              <input type=""number"" class=""form-control text-center"" value=""1"" name=""SoLuong""");
+                    BeginWriteAttribute("placeholder", " placeholder=\"", 5982, "\"", 5996, 0);
+                    EndWriteAttribute();
+                    WriteLiteral(@" aria-label=""Example text with button addon"" aria-describedby=""button-addon1"">
+              <div class=""input-group-append"">
+                <button class=""btn btn-outline-primary js-btn-plus"" type=""button"">&plus;</button>
+              </div>
+            </div>
+                    </div>
+                    <p><button class=""buy-now btn btn-sm btn-primary"">Add To Cart</button></p>
+            ");
                 }
                 );
-                __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
-                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper>();
+                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper>();
+                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper.Controller = (string)__tagHelperAttribute_13.Value;
+                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_13);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper.Action = (string)__tagHelperAttribute_14.Value;
+                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_14);
+                if (__Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper.RouteValues == null)
+                {
+                    throw new InvalidOperationException(InvalidTagHelperIndexerAssignment("asp-route-id", "Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper", "RouteValues"));
+                }
+                BeginWriteTagHelperAttribute();
+#nullable restore
+#line 127 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Product\ProductDetail.cshtml"
+                                                                         WriteLiteral(ViewBag.Product.ProductId);
+
+#line default
+#line hidden
+#nullable disable
+                __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
+                __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper.RouteValues["id"] = __tagHelperStringValueBuffer;
+                __tagHelperExecutionContext.AddTagHelperAttribute("asp-route-id", __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper.RouteValues["id"], global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
                 {

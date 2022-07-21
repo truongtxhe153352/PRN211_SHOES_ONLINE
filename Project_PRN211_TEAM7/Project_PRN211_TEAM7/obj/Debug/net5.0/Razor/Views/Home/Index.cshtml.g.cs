@@ -13,7 +13,7 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 3 "C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
+#line 3 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
 using Project_PRN211_TEAM7.Models;
 
 #line default
@@ -261,7 +261,7 @@ using Project_PRN211_TEAM7.Models;
                 <ul>
 ");
 #nullable restore
-#line 54 "C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
+#line 54 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
                      if(@ViewBag.Message != null){
 
 #line default
@@ -271,7 +271,7 @@ using Project_PRN211_TEAM7.Models;
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d67f87547d304da5ea102815db9b9e80d8cb145b28121", async() => {
                     WriteLiteral("<span class=\"icon icon-person\">Hello: ");
 #nullable restore
-#line 55 "C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
+#line 55 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
                                                                                                                          Write(ViewBag.Message);
 
 #line default
@@ -295,7 +295,7 @@ using Project_PRN211_TEAM7.Models;
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("</li>\r\n");
 #nullable restore
-#line 56 "C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
+#line 56 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
                                     }
                                     else
                                     {
@@ -323,7 +323,7 @@ using Project_PRN211_TEAM7.Models;
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("</li>\r\n");
 #nullable restore
-#line 60 "C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
+#line 60 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
                                         
                                     }
 
@@ -368,7 +368,7 @@ using Project_PRN211_TEAM7.Models;
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n            </li>\r\n            <li class=\"has-children\">\r\n              <a href=\"#\">Brand</a>\r\n              <ul class=\"dropdown\">\r\n");
 #nullable restore
-#line 85 "C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
+#line 85 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
                                  foreach(var c in @ViewBag.Brand)
                                 {
 
@@ -379,7 +379,7 @@ using Project_PRN211_TEAM7.Models;
                 BeginWriteAttribute("href", " href=\"", 3588, "\"", 3619, 2);
                 WriteAttributeValue("", 3595, "/Product/Shop/", 3595, 14, true);
 #nullable restore
-#line 87 "C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
+#line 87 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
 WriteAttributeValue("", 3609, c.BrandId, 3609, 10, false);
 
 #line default
@@ -388,7 +388,7 @@ WriteAttributeValue("", 3609, c.BrandId, 3609, 10, false);
                 EndWriteAttribute();
                 WriteLiteral(" >");
 #nullable restore
-#line 87 "C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
+#line 87 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
                                                                         Write(c.BrandName);
 
 #line default
@@ -396,7 +396,7 @@ WriteAttributeValue("", 3609, c.BrandId, 3609, 10, false);
 #nullable disable
                 WriteLiteral("</a></li>\r\n");
 #nullable restore
-#line 88 "C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
+#line 88 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
                                 } 
 
 #line default
@@ -422,7 +422,7 @@ WriteAttributeValue("", 3609, c.BrandId, 3609, 10, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("</li>\r\n            <li><a href=\"contact.html\">Contact</a></li>\r\n");
 #nullable restore
-#line 94 "C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
+#line 94 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
               if (@ViewBag.Message != null)
              {
 
@@ -467,7 +467,7 @@ WriteAttributeValue("", 3609, c.BrandId, 3609, 10, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("</li>\r\n              </ul>\r\n            </li>\r\n");
 #nullable restore
-#line 103 "C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
+#line 103 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
             }
 
 #line default
@@ -522,7 +522,7 @@ WriteAttributeValue("", 3609, c.BrandId, 3609, 10, false);
         <div class=""row"">
 ");
 #nullable restore
-#line 133 "C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
+#line 133 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
                      for (var i = 0; i < 3; i++)
                     {
 
@@ -535,7 +535,7 @@ WriteAttributeValue("", 3609, c.BrandId, 3609, 10, false);
                     BeginWriteAttribute("src", " src=\"", 5871, "\"", 5909, 2);
                     WriteAttributeValue("", 5877, "images/", 5877, 7, true);
 #nullable restore
-#line 138 "C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
+#line 138 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
 WriteAttributeValue("", 5884, Model.ElementAt(i).Image, 5884, 25, false);
 
 #line default
@@ -559,7 +559,7 @@ WriteAttributeValue("", 5884, Model.ElementAt(i).Image, 5884, 25, false);
                 }
                 BeginWriteTagHelperAttribute();
 #nullable restore
-#line 138 "C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
+#line 138 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
                                                                                  WriteLiteral(Model.ElementAt(i).ProductId);
 
 #line default
@@ -577,7 +577,7 @@ WriteAttributeValue("", 5884, Model.ElementAt(i).Image, 5884, 25, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                        </figure>\r\n                        <div class=\"text\">\r\n                        <span class=\"text-uppercase\">Collections</span>\r\n                        <h3>");
 #nullable restore
-#line 142 "C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
+#line 142 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
                        Write(Model.ElementAt(i).Brand.BrandName);
 
 #line default
@@ -585,7 +585,7 @@ WriteAttributeValue("", 5884, Model.ElementAt(i).Image, 5884, 25, false);
 #nullable disable
                 WriteLiteral("</h3>\r\n                        </div>\r\n                        </a>\r\n                        </div> \r\n");
 #nullable restore
-#line 146 "C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
+#line 146 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
                       }
 
 #line default
@@ -606,7 +606,7 @@ WriteAttributeValue("", 5884, Model.ElementAt(i).Image, 5884, 25, false);
             <div class=""nonloop-block-3 owl-carousel"">
 ");
 #nullable restore
-#line 160 "C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
+#line 160 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
                  for (int i = 0; i < 5; i++)
                 {
 
@@ -641,7 +641,7 @@ WriteAttributeValue("", 7106, Model.ElementAt(i).Image, 7106, 25, false);
                 }
                 BeginWriteTagHelperAttribute();
 #nullable restore
-#line 165 "C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
+#line 165 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
                                                                             WriteLiteral(Model.ElementAt(i).ProductId);
 
 #line default
@@ -659,7 +659,7 @@ WriteAttributeValue("", 7106, Model.ElementAt(i).Image, 7106, 25, false);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                  </figure>\r\n                  <div class=\"block-4-text p-4\">\r\n                    <h3><a href=\"#\">");
 #nullable restore
-#line 168 "C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
+#line 168 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
                                Write(Model.ElementAt(i).ProductName);
 
 #line default
@@ -667,7 +667,7 @@ WriteAttributeValue("", 7106, Model.ElementAt(i).Image, 7106, 25, false);
 #nullable disable
                 WriteLiteral("</a></h3>\r\n                    <p class=\"mb-0\">Finding perfect shoe</p>\r\n                    <p class=\"text-primary font-weight-bold\">");
 #nullable restore
-#line 170 "C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
+#line 170 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
                                                         Write(Model.ElementAt(i).Price);
 
 #line default
@@ -675,7 +675,7 @@ WriteAttributeValue("", 7106, Model.ElementAt(i).Image, 7106, 25, false);
 #nullable disable
                 WriteLiteral("</p>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n");
 #nullable restore
-#line 174 "C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
+#line 174 "D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Home\Index.cshtml"
             }
 
 #line default
