@@ -20,6 +20,8 @@ namespace Project_PRN211_TEAM7.Models
         public string Image { get; set; }
         public string Description { get; set; }
         public int? BrandId { get; set; }
+        public DateTime? CreatedDate { get; set; }
+        public DateTime? ModifiedDate { get; set; }
 
         public virtual Brand Brand { get; set; }
         public virtual ICollection<OderDetail> OderDetails { get; set; }

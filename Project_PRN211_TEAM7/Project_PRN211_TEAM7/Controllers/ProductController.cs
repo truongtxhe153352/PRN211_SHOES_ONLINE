@@ -24,6 +24,14 @@ namespace Project_PRN211_TEAM7.Controllers
             
             // lay danh sach category      
             ViewBag.Brand = GetAllBrand();
+            // lay cac san pham trong brand yeu cau
+            if (Page <= 0)
+            {
+                Page = 1;
+            }
+            int PageSize = 3;
+
+            List<Product> products = GetProduct(Id, (Page - 1) * PageSize + 1, PageSize);
 
             // lay cac san pham trong brand yeu cau, tại Page yêu cầu
             if (page <= 0) 
@@ -119,7 +127,7 @@ namespace Project_PRN211_TEAM7.Controllers
             var product = db.Products.Find(id);
             int b = (int)product.BrandId;
             var sizes = (from s in db.Sizes
-                         where s.ProductId == id
+                         where s.ProductId == id & s.Quantity != 0
                          select s).ToList();
             var quantity = db.Sizes.Where(item => item.ProductId == id).Sum(i => i.Quantity);
             ViewBag.Sizes = sizes;

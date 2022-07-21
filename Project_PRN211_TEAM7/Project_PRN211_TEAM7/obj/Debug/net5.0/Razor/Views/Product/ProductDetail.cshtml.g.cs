@@ -493,7 +493,9 @@ AddHtmlAttributeValue("", 5099, ViewBag.Product.Image, 5099, 22, false);
                 }
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
-                WriteLiteral("\r\n          </div>\r\n          <div class=\"col-md-6\">\r\n            <h2 class=\"text-black\">");
+                WriteLiteral("\r\n          </div>\r\n          <div class=\"col-md-6\">\r\n              ");
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6bcb1ec40914f6ebd997bce461123b6c21b1f5a34253", async() => {
+                    WriteLiteral("\r\n            <h2 class=\"text-black\">");
 #nullable restore
 #line 115 "E:\camera\SelfStudy\Project_Test\1\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Product\ProductDetail.cshtml"
                               Write(ViewBag.Product.ProductName);
@@ -501,7 +503,7 @@ AddHtmlAttributeValue("", 5099, ViewBag.Product.Image, 5099, 22, false);
 #line default
 #line hidden
 #nullable disable
-                WriteLiteral("</h2>\r\n            <p>");
+                    WriteLiteral("</h2>\r\n            <p>");
 #nullable restore
 #line 116 "E:\camera\SelfStudy\Project_Test\1\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Product\ProductDetail.cshtml"
           Write(ViewBag.Product.Description);
@@ -509,7 +511,7 @@ AddHtmlAttributeValue("", 5099, ViewBag.Product.Image, 5099, 22, false);
 #line default
 #line hidden
 #nullable disable
-                WriteLiteral("</p>\r\n            <p><strong class=\"text-primary h4\">$");
+                    WriteLiteral("</p>\r\n            <p><strong class=\"text-primary h4\">$");
 #nullable restore
 #line 117 "E:\camera\SelfStudy\Project_Test\1\Project_PRN211_TEAM7\Project_PRN211_TEAM7\Views\Product\ProductDetail.cshtml"
                                            Write(ViewBag.Product.Price);
