@@ -60,11 +60,11 @@ namespace Project_PRN211_TEAM7.Controllers
             ViewBag.brand = brand;
             var listBrand = db.Brands.ToList();
             ViewBag.listbrand = listBrand;
-            if (name == null)
-            {
-                ViewBag.Mess = "Product name cannot be empty";
-                return View();
-            }
+            //if (name == null)
+            //{
+            //    ViewBag.Mess = "Product name cannot be empty";
+            //    return View();
+            //}
 
             Product p = new Product();
             double sellPrice = 0;
@@ -72,7 +72,7 @@ namespace Project_PRN211_TEAM7.Controllers
             int sizePro = 0;
             int quantityPro = 0;
             bool check = false;
-            DateTime date;
+
             DateTime now = DateTime.Now;
             // Xét xem price có phải là số ko
             try
@@ -226,11 +226,11 @@ namespace Project_PRN211_TEAM7.Controllers
             ViewBag.brand = brand;
             var brands = db.Brands.ToList();
             ViewBag.brands = brands;
-            if (name == null)
-            {
-                ViewBag.Mess = "Product name cannot be empty";
-                return View();
-            }
+            //if (name == null)
+            //{
+            //    ViewBag.Mess = "Product name cannot be empty";
+            //    return View();
+            //}
 
             
             double sellPrice = 0;

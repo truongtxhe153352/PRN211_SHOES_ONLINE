@@ -165,7 +165,7 @@
                             }
                         </select>
                     </form>
-                    <form asp-controller="Admin" asp-action="ProductManage" id="frmSort">
+                    @*<form asp-controller="Admin" asp-action="ProductManage" id="frmSort">
                         SORT BY
                         <select name="sort" onchange="frmSort()">
                             @if (@ViewBag.sort == 0)
@@ -194,11 +194,11 @@
                                 <option value="2">Decrease Price</option>
                             }
                         </select>
-                    </form>
-                    @if (@Context.Session.GetString("messdelete") != null)
+                    </form>*@
+         @*           @if (@Context.Session.GetString("messdelete") != null)
                     {
                         <h3 style="color: red">@Context.Session.GetString("messdelete")</h3>
-                    }
+                    }*@
                 </div>
                 <table class="table table-striped table-hover">
                     <thead>

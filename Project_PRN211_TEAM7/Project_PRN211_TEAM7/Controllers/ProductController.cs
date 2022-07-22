@@ -127,7 +127,7 @@ namespace Project_PRN211_TEAM7.Controllers
             
             int b = (int)product.BrandId;
             var sizes = (from s in db.Sizes
-                         where s.ProductId == id & s.Quantity != 0
+                         where s.ProductId == id 
                          select s).ToList();
             var quantity = db.Sizes.Where(item => item.ProductId == id).Sum(i => i.Quantity);
             ViewBag.Sizes = sizes;

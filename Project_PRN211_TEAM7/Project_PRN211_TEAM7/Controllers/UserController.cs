@@ -14,12 +14,14 @@ namespace Project_PRN211_TEAM7.Controllers
 
         public IActionResult Register()
         {
+            ViewBag.Brand = db.Brands.ToList();
             return View();
         }
         [HttpPost]
         [AllowAnonymous]
         public IActionResult Register(User acc, string re_password)
         {
+            ViewBag.Brand = db.Brands.ToList();
             if (acc.Password == null || re_password == null || acc.UserName == null || acc.Address == null || acc.Phone == null)
             {
                 return View();
