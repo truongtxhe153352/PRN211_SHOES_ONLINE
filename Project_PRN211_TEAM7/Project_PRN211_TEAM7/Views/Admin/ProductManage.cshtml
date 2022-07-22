@@ -53,44 +53,48 @@
     </head>
     <body>
     <div class="site-wrap">
-        <header class="site-navbar" role="banner">
+         <header class="site-navbar" role="banner">
             <div class="site-navbar-top">
                 <div class="container">
                     <div class="row align-items-center">
-
                         <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
-                            <form action="" class="site-block-top-search">
-                                <span class="icon icon-search2"></span>
-                                <input type="text" class="form-control border-0" placeholder="Search">
-                            </form>
+                          
                         </div>
 
                         <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
                             <div class="site-logo">
-                                <a href="index.html" class="js-logo-clone">Shoppers</a>
+                                <a asp-action="Index" asp-controller="Home" class="js-logo-clone">Shoppers</a>
                             </div>
                         </div>
 
                         <div class="col-6 col-md-4 order-3 order-md-3 text-right">
                             <div class="site-top-icons">
-                                <ul>
-                                    @if (@ViewBag.Message != null)
-                                    {
-                                        <li><a asp-controller="User" asp-action="Login"><span class="icon icon-person">Hello: @ViewBag.Message</span></a></li>
-                                    }
-                                    else
-                                    {
-                                        <li><a asp-controller="User" asp-action="Login"><span class="icon icon-person"></span></a></li>
+                                <nav class="site-navigation text-right text-md-center">
+                                    <ul class="site-menu js-clone-nav d-none d-md-block">
+                                        @if (@Context.Session.GetString("username") != null)
+                                        {
+                                            <li class="has-children">
+                                                <a>Hello @Context.Session.GetString("username")</a>
+                                                <ul class="dropdown">
+                                                    <li><a asp-controller="User" asp-action="Profile">Profile</a></li>
+                                                    <li><a asp-controller="User" asp-action="ChangePass">Change Password</a></li>
+                                                    <li><a asp-controller="User" asp-action="Logout">Logout</a></li>
+                                                </ul>
+                                            </li>
 
-                                    }
-                                    <li>
-                                        <a href="cart.html" class="site-cart">
-                                            <span class="icon icon-shopping_cart"></span>
-                                            <span class="count">2</span>
-                                        </a>
-                                    </li>
-                                    <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
-                                </ul>
+                                        }
+                                        else
+                                        {
+                                            <li><a asp-controller="User" asp-action="Login"><span class="icon icon-person"></span></a></li>
+
+                                        }
+                                        <li>
+                                            <a asp-controller="Product" asp-action="Cart" class="site-cart">
+                                                <span class="icon icon-shopping_cart"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
 
@@ -100,30 +104,13 @@
             <nav class="site-navigation text-right text-md-center" role="navigation">
                 <div class="container">
                     <ul class="site-menu js-clone-nav d-none d-md-block">
-                        <li class="active">
+                        <li>
                             <a asp-action="Index" asp-controller="Home">Home</a>
                         </li>
-                        <li class="has-children">
-                            <a href="#">Brand</a>
-                            <ul class="dropdown">
-                                @foreach (var c in @ViewBag.Brand)
-                                {
-                                    <li><a href="/Product/Shop/@c.BrandId">@c.BrandName</a></li>
-                                }
-
-                            </ul>
-                        </li>
                         <li><a asp-controller="Product" asp-action="Shop">Shop</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        @if (@ViewBag.Message != null)
+                        @if (@Context.Session.GetString("role") != null && @Context.Session.GetString("role").Equals("admin"))
                         {
-                            <li class="has-children">
-                                <a>My Account</a>
-                                <ul class="dropdown">
-                                    <li><a asp-controller="User" asp-action="ChangePass">Change Password</a></li>
-                                    <li><a asp-controller="User" asp-action="Logout">Logout</a></li>
-                                </ul>
-                            </li>
+                            <li><a asp-controller="Admin" asp-action="ProductManage">ProductManage</a></li>
                         }
                     </ul>
                 </div>

@@ -25,19 +25,18 @@ namespace Project_PRN211_TEAM7.Controllers
             // lay danh sach category      
             ViewBag.Brand = GetAllBrand();
             // lay cac san pham trong brand yeu cau
-            if (Page <= 0)
+            if (page <= 0)
             {
-                Page = 1;
+                page = 1;
             }
             int PageSize = 3;
 
-            List<Product> products = GetProduct(Id, (Page - 1) * PageSize + 1, PageSize);
 
             // lay cac san pham trong brand yeu cau, tại Page yêu cầu
             if (page <= 0) 
                 page = 1;
 
-            int PageSize = Convert.ToInt32(configuration.GetValue<string>("AppSettings:PageSize"));
+            int pageSize = Convert.ToInt32(configuration.GetValue<string>("AppSettings:PageSize"));
             ViewBag.products = getproductsFilterPrice(Id, (page - 1) * PageSize + 1, PageSize, SearchText, filterPrice);
             int TotalProduct = GetNumberOfProductsFilter(Id, SearchText, filterPrice);
             int TotalPage = TotalProduct / PageSize;
@@ -125,6 +124,7 @@ namespace Project_PRN211_TEAM7.Controllers
         {
 
             var product = db.Products.Find(id);
+            
             int b = (int)product.BrandId;
             var sizes = (from s in db.Sizes
                          where s.ProductId == id & s.Quantity != 0
@@ -144,6 +144,7 @@ namespace Project_PRN211_TEAM7.Controllers
                     break;
                 }
             }
+            ViewBag.Brand = db.Brands.ToList();
             return View(list);
         }
     }
