@@ -362,3 +362,17 @@ C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\
 C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\ShoppingCart\CheckOut.cshtml.g.cs
 C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\User\EditProfile.cshtml.g.cs
 C:\Git\GitHub\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\User\Profile.cshtml.g.cs
+D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\bin\Debug\net5.0\JetBrains.Annotations.dll
+D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\bin\Debug\net5.0\X.PagedList.dll
+D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\bin\Debug\net5.0\X.PagedList.Mvc.Core.dll
+D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Project_PRN211_TEAM7.MvcApplicationPartsAssemblyInfo.cs
+D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\Admin\AddProduct.cshtml.g.cs
+D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\Admin\DeleteProduct.cshtml.g.cs
+D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\Admin\ProductManage.cshtml.g.cs
+D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\Admin\QuantityChange.cshtml.g.cs
+D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\Admin\SizeManage.cshtml.g.cs
+D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\Admin\UpdateProduct.cshtml.g.cs
+D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\ShoppingCart\BuySuccess.cshtml.g.cs
+D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\ShoppingCart\CheckOut.cshtml.g.cs
+D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\User\EditProfile.cshtml.g.cs
+D:\PROJECT_PRN_GROUP7_FINAL\PRN211_SHOES_ONLINE\Project_PRN211_TEAM7\Project_PRN211_TEAM7\obj\Debug\net5.0\Razor\Views\User\Profile.cshtml.g.cs

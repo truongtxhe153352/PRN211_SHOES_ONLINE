@@ -29,7 +29,7 @@ namespace Project_PRN211_TEAM7.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("server=LAPTOP-402O4APC; database=PROJECT_PRN211_SHOES_APP;uid=sa;password=123");
+                optionsBuilder.UseSqlServer("server=TRUONGTRINH\\SQLEXPRESS; database=PROJECT_PRN211_SHOES_APP;uid=sa;password=123");
             }
         }
 
